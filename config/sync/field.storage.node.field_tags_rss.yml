@@ -1,0 +1,20 @@
+uuid: d9c6e5bb-b279-4dd9-bae8-e71fb0119ddd
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_tags_rss
+field_name: field_tags_rss
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

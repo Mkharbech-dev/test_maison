@@ -1,0 +1,20 @@
+uuid: bc5eb168-bee8-4bbf-8203-9093bca6788d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - rss_import
+  theme:
+    - olivero
+id: olivero_blockdederniersarticles
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: derniers_articles_block
+settings:
+  id: derniers_articles_block
+  label: 'Block de derniers articles'
+  label_display: visible
+  provider: rss_import
+visibility: {  }

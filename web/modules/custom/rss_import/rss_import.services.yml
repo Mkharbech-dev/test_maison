@@ -1,0 +1,3 @@
+services:
+  rss_import_service:
+    class: Drupal\rss_import\Service\LastArticlesService

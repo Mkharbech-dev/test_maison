@@ -1,0 +1,26 @@
+uuid: 0dea2524-e16e-48fc-aa0b-fd7e58b9dfe5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - filter.format.basic_html
+    - filter.format.full_html
+    - node.type.drupal_planet_rss
+  module:
+    - text
+id: node.drupal_planet_rss.field_description
+field_name: field_description
+entity_type: node
+bundle: drupal_planet_rss
+label: Description
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - full_html
+field_type: text_long

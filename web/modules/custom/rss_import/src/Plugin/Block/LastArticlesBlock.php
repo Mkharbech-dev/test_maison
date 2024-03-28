@@ -2,6 +2,7 @@
 namespace Drupal\rss_import\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 
 /**
@@ -12,35 +13,39 @@ use Drupal\node\Entity\Node;
  *  )
  */
 class LastArticlesBlock extends BlockBase {
-
-  /**
-   * @return array
-   */
   public function build()
   {
-    $config = \Drupal::config('block.block.derniers_articles_block');
-    //$config->get('settings.my_text_field');
-    return [
-      '#theme' => 'block__rss_import',
-      '#data' => [
-        'name' => 'salah',
-        'lastname' => 'mkharbech',
-      ],
-    ];
+    // TODO: Implement build() method.
   }
-
 
   /**
-   * @param $limit
-   * @return \Drupal\Core\Entity\EntityBase[]|\Drupal\Core\Entity\EntityInterface[]|Node[]
+   * {@inheritdoc}
    */
-  private function getData($limit = 10){
-    $query = \Drupal::entityQuery('node');
-    $query->condition('status', 1);
-    $query->condition('type', 'drupal_planet_rss');
-    $query->range(0, $limit)
-          ->accessCheck();
-    $nids = $query->execute();
-    return Node::loadMultiple($nids);
+  public function blockForm($form, FormStateInterface $form_state) {
+    $form = parent::blockForm($form, $form_state);
+
+    $config = $this->getConfiguration();
+
+    $form['articles_number'] = [
+      '#type' => 'number',
+      '#title' => $this->t('Nombre d\'Articles'),
+      '#description' => $this->t('Nombre d\'articles à afficher dans le Block '),
+      '#default_value' => isset($config['articles_number']) ? $config['articles_number'] : 1,
+      '#required' => TRUE,
+    ];
+
+    $form['cache_invalidation'] = [
+      '#type' => 'number',
+      '#title' => $this->t('Invalidation de cache'),
+      '#description' => $this->t('Durée de cache avant invalidation'),
+      '#default_value' => isset($config['cache_invalidation']) ? $config['cache_invalidation'] : 0,
+      '#required' => TRUE,
+    ];
+
+    return $form;
   }
+
+
+
+
 }

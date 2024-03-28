@@ -1,0 +1,31 @@
+uuid: 5898d967-3ee2-4eb5-958f-58b0eadef09e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.drupal_planet_rss.feeds_item
+    - field.field.node.drupal_planet_rss.field_date_publication
+    - field.field.node.drupal_planet_rss.field_description
+    - field.field.node.drupal_planet_rss.field_lien
+    - field.field.node.drupal_planet_rss.field_tags_rss
+    - node.type.drupal_planet_rss
+  module:
+    - user
+id: node.drupal_planet_rss.teaser
+targetEntityType: node
+bundle: drupal_planet_rss
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  feeds_item: true
+  field_date_publication: true
+  field_description: true
+  field_lien: true
+  field_tags_rss: true
+  langcode: true

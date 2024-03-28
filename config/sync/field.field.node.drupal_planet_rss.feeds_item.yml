@@ -1,0 +1,23 @@
+uuid: 8cea3851-c283-4f18-bed8-929b3025bd01
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.feeds_item
+    - node.type.drupal_planet_rss
+  module:
+    - feeds
+id: node.drupal_planet_rss.feeds_item
+field_name: feeds_item
+entity_type: node
+bundle: drupal_planet_rss
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item

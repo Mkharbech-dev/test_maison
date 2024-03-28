@@ -1,0 +1,18 @@
+uuid: 2c60ab39-5479-4a89-803b-f9d65f4ab9c3
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Drupal Planet RSS'
+type: drupal_planet_rss
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

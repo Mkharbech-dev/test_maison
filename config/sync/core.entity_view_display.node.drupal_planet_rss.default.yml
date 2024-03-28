@@ -1,0 +1,65 @@
+uuid: 3173967f-bd0f-4889-9370-babd0b23de3a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.drupal_planet_rss.feeds_item
+    - field.field.node.drupal_planet_rss.field_date_publication
+    - field.field.node.drupal_planet_rss.field_description
+    - field.field.node.drupal_planet_rss.field_lien
+    - field.field.node.drupal_planet_rss.field_tags_rss
+    - node.type.drupal_planet_rss
+  module:
+    - datetime
+    - link
+    - text
+    - user
+id: node.drupal_planet_rss.default
+targetEntityType: node
+bundle: drupal_planet_rss
+mode: default
+content:
+  field_date_publication:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_lien:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_tags_rss:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  feeds_item: true
+  langcode: true

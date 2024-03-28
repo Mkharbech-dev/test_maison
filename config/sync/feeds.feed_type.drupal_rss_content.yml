@@ -1,0 +1,69 @@
+uuid: 19c0e4b8-9b4e-4cd9-8d12-52381ece7beb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.drupal_planet_rss.field_date_publication
+    - field.field.node.drupal_planet_rss.field_description
+    - field.field.node.drupal_planet_rss.field_lien
+    - node.type.drupal_planet_rss
+  module:
+    - node
+label: 'Drupal RSS'
+id: drupal_rss_content
+description: 'feed type to import Drupal RSS'
+help: ''
+import_period: 3600
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: true
+  use_pubsubhubbub: false
+  always_download: true
+  fallback_hub: ''
+  request_timeout: 30
+parser: syndication
+parser_configuration: {  }
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: drupal_planet_rss
+  langcode: fr
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources: {  }
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_description
+    map:
+      value: description
+    settings:
+      language: null
+      format: plain_text
+  -
+    target: field_lien
+    map:
+      uri: url
+      title: title
+    settings:
+      language: null
+  -
+    target: field_date_publication
+    map:
+      value: timestamp
+    settings:
+      language: null
+      timezone: UTC

@@ -1,0 +1,23 @@
+uuid: e5339bf4-e922-4323-849c-9e7b6c5ef8b0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lien
+    - node.type.drupal_planet_rss
+  module:
+    - link
+id: node.drupal_planet_rss.field_lien
+field_name: field_lien
+entity_type: node
+bundle: drupal_planet_rss
+label: Lien
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

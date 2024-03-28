@@ -1,14 +1,14 @@
 <?php
+use Drupal\feeds\Entity\Feed;
 
 
-function import_rss_theme($existing, $type, $theme, $path) {
-  dump($theme); exit();
-  return [
-    'block__rss_import' => [
-      'variables' => [
-        'data' => NULL,
-      ],
-      'template' => 'block--rss-import',
-    ],
-  ];
+/**
+ * Implements hook_theme().
+ */
+function import_rss_theme() {
+  return array(
+    'block_last_articles' => array(
+      'variables' => array('articles' => NULL),
+    ),
+  );
 }

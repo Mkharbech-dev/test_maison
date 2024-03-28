@@ -1,0 +1,11 @@
+uuid: 623b5094-c782-4c9d-832f-ca770284f320
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.drupal_planet_rss
+id: node.drupal_planet_rss
+target_entity_type_id: node
+target_bundle: drupal_planet_rss
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,21 @@
+uuid: 9f62726a-9d1f-4ffb-9d55-f0f76fe9c332
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_publication
+    - node.type.drupal_planet_rss
+  module:
+    - datetime
+id: node.drupal_planet_rss.field_date_publication
+field_name: field_date_publication
+entity_type: node
+bundle: drupal_planet_rss
+label: 'Date de publication'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

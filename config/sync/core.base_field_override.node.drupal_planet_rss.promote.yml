@@ -1,0 +1,22 @@
+uuid: e9491194-2601-46d7-9d14-3007f4f5ae61
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.drupal_planet_rss
+id: node.drupal_planet_rss.promote
+field_name: promote
+entity_type: node
+bundle: drupal_planet_rss
+label: "Promu en page d'accueil"
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean
