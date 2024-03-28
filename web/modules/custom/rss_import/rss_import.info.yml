@@ -1,0 +1,5 @@
+name: 'RSS Import'
+type: module
+description: 'Custom module to import RSS feed every day at 6.'
+core_version_requirement: ^10
+package: Fidesio
