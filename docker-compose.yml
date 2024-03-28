@@ -1,0 +1,54 @@
+version: "3"
+services:
+  # database container
+  mysql:
+    image: mysql:$MYSQL_TAG
+    container_name: "${PROJECT_NAME}_mysql"
+    command: --default-authentication-plugin=mysql_native_password --lower_case_table_names=1 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --disable-log-bin
+    restart: unless-stopped
+    stop_grace_period: 30s
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "${DB_PORT}:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
+      MYSQL_DATABASE: $DB_NAME
+      MYSQL_USER: $DB_USER
+      MYSQL_PASSWORD: $DB_PASSWORD
+  # Drupal with xdebug
+  drupal:
+    image: drupal:latest
+    container_name: "${PROJECT_NAME}_drupal"
+    ports:
+      - "${APACHE_PORT}:80"
+    volumes:
+      - ./web:/var/www/html/
+      - ./vendor:/opt/drupal/vendor
+      - ./config:/opt/drupal/config
+      - ./composer.json:/opt/drupal/composer.json
+      - ./composer.lock:/opt/drupal/composer.lock
+    depends_on:
+      - mysql
+    environment:
+      - MYSQL_USERNAME=$DB_ROOT_USER
+      - MYSQL_PASSWORD=$DB_ROOT_PASSWORD
+      - MYSQL_DATABASE=$DB_NAME
+      - MYSQL_PORT=$DB_PORT
+      - MYSQL_HOST=$DB_HOST
+
+  # phpmyadmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: "${PROJECT_NAME}_phpmyadmin"
+    restart: always
+    ports:
+      - 8082:80
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_ARBITRARY: 1
+      PMA_PORT: $DB_PORT
+      MYSQL_USERNAME: $DB_ROOT_USER
+      MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
