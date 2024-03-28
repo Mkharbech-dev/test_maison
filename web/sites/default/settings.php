@@ -824,4 +824,9 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
   'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
 );
-$settings['config_sync_directory'] = 'sites/default/files/config_ycbWkDiPf_04gmYHL72LKEA242Jeki5D-RoTsqO5f7vjbLFt_a14AbvJrliwdnQf74iCMVP9Sw/sync';
+
+$settings['config_sync_directory'] = '../config/sync';
+
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+   include $app_root . '/' . $site_path . '/settings.local.php';
+}

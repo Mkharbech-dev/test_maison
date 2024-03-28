@@ -1,0 +1,14 @@
+uuid: 6d171659-c3bd-4891-abad-35ad7a46814d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - feeds
+id: cron.feeds
+crontab: '*/15 * * * *'
+plugin: cron
+type: feeds
+configuration: {  }
+provider: feeds
+single: false
+weight: 0

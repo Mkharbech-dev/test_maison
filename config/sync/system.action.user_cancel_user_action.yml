@@ -1,0 +1,13 @@
+uuid: 1816083b-9b92-4741-a7d9-f9f279b82bef
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: nvrL9bFilzBvm2bjO9rQnFDpBA7dBBUjShSSt6NS-DU
+id: user_cancel_user_action
+label: "Annuler l'(les) utilisateur(s) sélectionné(s)"
+type: user
+plugin: user_cancel_user_action
+configuration: {  }

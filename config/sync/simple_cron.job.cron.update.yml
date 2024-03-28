@@ -1,0 +1,14 @@
+uuid: aac4cb14-6533-403d-867e-8730157e4538
+langcode: fr
+status: true
+dependencies:
+  module:
+    - update
+id: cron.update
+crontab: '*/15 * * * *'
+plugin: cron
+type: update
+configuration: {  }
+provider: update
+single: false
+weight: 0

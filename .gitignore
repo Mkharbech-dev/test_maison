@@ -6,4 +6,4 @@
 /web/themes/contrib/
 /.env
 /web/sites/default/files/
-
+/.idea
