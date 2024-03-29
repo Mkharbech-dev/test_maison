@@ -1,0 +1,22 @@
+uuid: 40927238-eac7-47cb-a9b8-e2e5312cc635
+langcode: fr
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - rss_drupal
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: rss_drupal_help
+theme: rss_drupal
+region: sidebar_first
+weight: -7
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Aide
+  label_display: '0'
+  provider: help
+visibility: {  }

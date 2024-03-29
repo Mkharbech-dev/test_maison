@@ -1,0 +1,20 @@
+uuid: 977d9df6-8f13-43dc-9e3f-9a73dc84bf4a
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - rss_drupal
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: rss_drupal_page_title
+theme: rss_drupal
+region: sidebar_first
+weight: -8
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Titre de page'
+  label_display: '0'
+  provider: core
+visibility: {  }

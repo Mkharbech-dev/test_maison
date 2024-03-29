@@ -1,0 +1,72 @@
+uuid: 7800e7d9-f9c7-4a08-958c-f290e34a9f0f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_publication
+    - field.storage.node.field_description
+    - search_api.server.drupal_rss
+  module:
+    - node
+    - search_api
+id: rss
+name: RSS
+description: ''
+read_only: false
+field_settings:
+  field_date_publication:
+    label: 'Date de publication'
+    datasource_id: 'entity:node'
+    property_path: field_date_publication
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_date_publication
+  field_description:
+    label: Description
+    datasource_id: 'entity:node'
+    property_path: field_description
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_description
+  status:
+    label: Publié
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
+  title:
+    label: Titre
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - drupal_planet_rss
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  custom_value: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: lifo
+options:
+  cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
+server: drupal_rss

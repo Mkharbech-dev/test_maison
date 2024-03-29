@@ -1,0 +1,25 @@
+uuid: 811dc066-a31a-4fb9-8a24-bbd948f53994
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - rss_drupal
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: rss_drupal_site_branding
+theme: rss_drupal
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Identité du site'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

@@ -5,7 +5,7 @@ dependencies:
   module:
     - feeds
 id: cron.feeds
-crontab: '*/15 * * * *'
+crontab: '0 6 * * *'
 plugin: cron
 type: feeds
 configuration: {  }

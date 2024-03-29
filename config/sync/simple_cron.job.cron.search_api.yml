@@ -1,0 +1,14 @@
+uuid: 3147288e-7759-409c-b24f-8cf7a29ac70e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - search_api
+id: cron.search_api
+crontab: '*/15 * * * *'
+plugin: cron
+type: search_api
+configuration: {  }
+provider: search_api
+single: false
+weight: 0

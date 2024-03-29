@@ -1,0 +1,22 @@
+uuid: 861291ff-bd22-4356-8417-1fe15c24e662
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - rss_drupal
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: rss_drupal_content
+theme: rss_drupal
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenu de la page principale'
+  label_display: '0'
+  provider: system
+visibility: {  }

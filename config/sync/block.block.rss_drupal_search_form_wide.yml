@@ -1,0 +1,23 @@
+uuid: f937c119-7224-44c7-8509-7875402e21c2
+langcode: fr
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - rss_drupal
+_core:
+  default_config_hash: imMyHD6LYci0gtXq56qr9ZKGHzbEG9uFydrN5EhKtSU
+id: rss_drupal_search_form_wide
+theme: rss_drupal
+region: secondary_menu
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Formulaire de recherche (large)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

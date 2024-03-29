@@ -1,0 +1,22 @@
+uuid: 98b43c44-1eea-471a-b932-cae011943c9a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - rss_drupal
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: rss_drupal_breadcrumbs
+theme: rss_drupal
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: "Fils d'ariane"
+  label_display: '0'
+  provider: system
+visibility: {  }

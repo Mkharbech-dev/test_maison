@@ -1,0 +1,20 @@
+uuid: 501f0f88-f268-4d37-8b74-d7831f9a8298
+langcode: fr
+status: true
+dependencies:
+  module:
+    - rss_import
+  theme:
+    - rss_drupal
+id: rss_drupal_blockdederniersarticles
+theme: rss_drupal
+region: sidebar_second
+weight: -7
+provider: null
+plugin: derniers_articles_block
+settings:
+  id: derniers_articles_block
+  label: 'Block de derniers articles'
+  label_display: visible
+  provider: rss_import
+visibility: {  }

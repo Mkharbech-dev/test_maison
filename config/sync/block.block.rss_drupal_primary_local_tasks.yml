@@ -1,0 +1,22 @@
+uuid: c776007d-cffd-492b-a679-f24b1290b4ea
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - rss_drupal
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: rss_drupal_primary_local_tasks
+theme: rss_drupal
+region: highlighted
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Onglets principaux'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

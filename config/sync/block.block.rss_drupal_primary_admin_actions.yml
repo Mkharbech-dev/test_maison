@@ -1,0 +1,20 @@
+uuid: 3e491115-fcda-4568-91ac-4cd8d1f0db67
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - rss_drupal
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: rss_drupal_primary_admin_actions
+theme: rss_drupal
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: "Actions d'administration principales"
+  label_display: '0'
+  provider: core
+visibility: {  }

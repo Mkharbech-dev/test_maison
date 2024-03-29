@@ -1,0 +1,15 @@
+uuid: 73f83f68-ac00-4435-9b15-4a511fa76645
+langcode: fr
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: drupal_rss
+name: 'Drupal RSS'
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  matching: partial
+  phrase: disabled
