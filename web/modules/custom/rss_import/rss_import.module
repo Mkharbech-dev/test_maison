@@ -1,14 +1,15 @@
 <?php
-use Drupal\feeds\Entity\Feed;
-
 
 /**
  * Implements hook_theme().
  */
-function import_rss_theme() {
-  return array(
-    'block_last_articles' => array(
-      'variables' => array('articles' => NULL),
-    ),
-  );
+function rss_import_theme($existing, $type, $theme, $path) {
+  return [
+    'rss_import_block' => [
+      'variables' => ['nodes' => []],
+      'template' => 'rss-import-block',
+      'path' => $path . '/templates',
+      'base hook' => 'block'
+    ],
+  ];
 }

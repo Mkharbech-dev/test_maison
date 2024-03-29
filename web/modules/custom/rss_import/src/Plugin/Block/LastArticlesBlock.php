@@ -2,6 +2,7 @@
 namespace Drupal\rss_import\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 
@@ -13,9 +14,15 @@ use Drupal\node\Entity\Node;
  *  )
  */
 class LastArticlesBlock extends BlockBase {
-  public function build()
-  {
-    // TODO: Implement build() method.
+  public function build() {
+    $config = $this->getConfiguration();
+    $build_data = \Drupal::service("rss_import_build_data_service");
+    $item_count = $config['articles_number'] ?? 5;
+
+    return [
+      '#theme' => 'rss_import_block',
+      '#nodes' => $build_data->getNumberOfArticles($item_count),
+    ];
   }
 
   /**
@@ -45,7 +52,30 @@ class LastArticlesBlock extends BlockBase {
     return $form;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function blockSubmit($form, FormStateInterface $form_state) {
+    $this->setConfiguration(
+      [
+        'articles_number' => $form_state->getValue('articles_number'),
+        'cache_invalidation' => $form_state->getValue('cache_invalidation'),
+      ]
+    );
+  }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheContexts() {
+    return Cache::mergeContexts(parent::getCacheContexts(), ['ip']);
+  }
 
-
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheMaxAge() {
+    $config = $this->getConfiguration();
+    return $config['cache_invalidation'] ?? -1;
+  }
 }

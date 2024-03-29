@@ -2,9 +2,18 @@
 namespace Drupal\rss_import\Service;
 
 
+use Drupal\node\Entity\Node;
+
+/**
+ *
+ */
 class LastArticlesService {
-  public function getNumberOfArticles($limit = 10) {
-    $lastArticles = [];
+
+  /**
+   * @param $limit
+   * @return array|\Drupal\Core\Entity\EntityBase[]|\Drupal\Core\Entity\EntityInterface[]|\Drupal\node\Entity\Node[]
+   */
+  public function getNumberOfArticles($limit = 5) {
     $query = \Drupal::entityQuery('node');
     $query->condition('type', 'drupal_planet_rss');
     $query->condition('status', 1);
@@ -14,9 +23,9 @@ class LastArticlesService {
     $nids = $query->execute();
 
     if (!empty($nids)) {
-      $lastArticles = \Drupal\node\Entity\Node::loadMultiple($nids);
+      return Node::loadMultiple($nids);
     }
 
-    return $lastArticles;
+    return [];
   }
 }

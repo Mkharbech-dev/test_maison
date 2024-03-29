@@ -1,0 +1,5 @@
+name: rss_drupal
+type: theme
+description: theme pour derniers articles
+core_version_requirement: ^10
+base theme: olivero

@@ -1,0 +1,9 @@
+{# File: templates/rss-import-block.html.twig #}
+<div class="custom-node-list-block">
+  {% for node in nodes %}
+    <div class="node">
+      <h6><a href="{{ node.field_lien.uri }}">{{ node.getTitle }}</a></h6>
+      <div class="content">{{ node.field_description.value|raw }}</div>
+    </div>
+  {% endfor %}
+</div>
